@@ -1,0 +1,84 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter attach
+
+## exception
+
+FormatException: FormatException: Bad UTF-8 encoding 0xb8 (at offset 0)
+
+```
+#0      _Utf8Decoder.convert (dart:convert/utf.dart:530:13)
+#1      Utf8Decoder.convert (dart:convert/utf.dart:327:13)
+#2      Utf8Codec.decode (dart:convert/utf.dart:59:56)
+#3      decodeMDnsResponse.readResourceRecord (package:multicast_dns/src/packet.dart:337:34)
+#4      decodeMDnsResponse (package:multicast_dns/src/packet.dart:361:55)
+#5      MDnsClient._handleIncoming (package:multicast_dns/multicast_dns.dart:221:45)
+#6      _rootRunUnary (dart:async/zone.dart:1136:13)
+#7      _CustomZone.runUnary (dart:async/zone.dart:1029:19)
+#8      _CustomZone.runUnaryGuarded (dart:async/zone.dart:931:7)
+#9      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:336:11)
+#10     _BufferingStreamSubscription._add (dart:async/stream_impl.dart:263:7)
+#11     _SyncStreamControllerDispatch._sendData (dart:async/stream_controller.dart:764:19)
+#12     _StreamController._add (dart:async/stream_controller.dart:640:7)
+#13     _StreamController.add (dart:async/stream_controller.dart:586:5)
+#14     new _RawDatagramSocket.<anonymous closure> (dart:io-patch/socket_patch.dart:1920:33)
+#15     _NativeSocket.issueReadEvent.issue (dart:io-patch/socket_patch.dart:897:14)
+#16     _microtaskLoop (dart:async/schedule_microtask.dart:41:21)
+#17     _startMicrotaskLoop (dart:async/schedule_microtask.dart:50:5)
+#18     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:116:13)
+#19     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:173:5)
+```
+
+## flutter doctor
+
+```
+[32m[✓][39m Flutter (Channel unknown, v1.10.4, on Mac OS X 10.14.4 18E226, locale
+    zh-Hans-CN)
+    [32m•[39m Flutter version 1.10.4 at /Users/zhaoliulei/flutter
+    [32m•[39m Framework revision 0b24a5a2ff (6 weeks ago), 2019-09-18 11:01:08 -0700
+    [32m•[39m Engine revision 2289072724
+    [32m•[39m Dart version 2.6.0 (build 2.6.0-dev.0.0 cb80ea7ba9)
+
+[33m[!][39m Android toolchain - develop for Android devices (Android SDK version 28.0.3)
+    [32m•[39m Android SDK at /Users/zhaoliulei/Library/Android/sdk
+    [32m•[39m Android NDK location not configured (optional; useful for native profiling
+      support)
+    [32m•[39m Platform android-28, build-tools 28.0.3
+    [32m•[39m Java binary at: /Applications/Android
+      Studio.app/Contents/jre/jdk/Contents/Home/bin/java
+    [32m•[39m Java version OpenJDK Runtime Environment (build
+      1.8.0_152-release-1136-b06)
+    [31m✗[39m Android licenses not accepted.  To resolve this, run: flutter doctor
+      --android-licenses
+
+[32m[✓][39m Xcode - develop for iOS and macOS (Xcode 11.1)
+    [32m•[39m Xcode at /Applications/Xcode.app/Contents/Developer
+    [32m•[39m Xcode 11.1, Build version 11A1027
+    [32m•[39m CocoaPods version 1.7.4
+
+[33m[!][39m Android Studio (version 3.2)
+    [32m•[39m Android Studio at /Applications/Android Studio.app/Contents
+    [31m✗[39m Flutter plugin not installed; this adds Flutter specific functionality.
+    [31m✗[39m Dart plugin not installed; this adds Dart specific functionality.
+    [32m•[39m Java version OpenJDK Runtime Environment (build
+      1.8.0_152-release-1136-b06)
+
+[33m[!][39m IntelliJ IDEA Ultimate Edition (version 2018.1.5)
+    [32m•[39m IntelliJ at /Applications/IntelliJ IDEA.app
+    [31m✗[39m Flutter plugin not installed; this adds Flutter specific functionality.
+    [31m✗[39m Dart plugin not installed; this adds Dart specific functionality.
+    [32m•[39m For information about installing plugins, see
+      https://flutter.dev/intellij-setup/#installing-the-plugins
+
+[32m[✓][39m VS Code (version 1.39.2)
+    [32m•[39m VS Code at /Applications/Visual Studio Code.app/Contents
+    [32m•[39m Flutter extension version 3.5.1
+
+[32m[✓][39m Connected device (1 available)
+    [32m•[39m iPhone 11 Pro Max • 3EB9C268-4503-4F22-AF4E-22497EF6F9A5 • ios •
+      com.apple.CoreSimulator.SimRuntime.iOS-13-1 (simulator)
+
+[33m![39m Doctor found issues in 3 categories.
+```
