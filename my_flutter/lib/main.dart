@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 void main() async {
   runApp(_buildRootWidget(ui.window.defaultRouteName));
 }
-//
+
 Widget _buildRootWidget(String route){
   return MaterialApp(
       title: 'Flutter Demo',
